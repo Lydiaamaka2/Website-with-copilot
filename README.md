@@ -1,2 +1,443 @@
 # Website-with-copilot
 A sales page code built completely by copilot.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Homemade Groundnuts - Premium Quality</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #E8D5C4 0%, #F5DEB3 100%);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #8B4513;
+            margin-bottom: 1rem;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #654321;
+            margin-bottom: 2rem;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            background: linear-gradient(135deg, #D2691E 0%, #CD853F 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Testimonial Section */
+        .testimonial {
+            background: #fff;
+            padding: 80px 20px;
+            margin: 40px 0;
+        }
+
+        .testimonial .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .testimonial-content h2 {
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-image {
+            text-align: center;
+        }
+
+        .testimonial-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .testimonial-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .model-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #D2691E;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(135deg, #FFF5EE 0%, #FFE4B5 100%);
+            padding: 80px 20px;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 50px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid #D2691E;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .benefit-card h3 {
+            color: #8B4513;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .benefit-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Product Section */
+        .product {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .product .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .product-image {
+            text-align: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .product-info h2 {
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-info p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #D2691E;
+            font-weight: bold;
+            margin: 2rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #8B4513;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .testimonial .container,
+            .product .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <h1>🥜 Pure Groundnuts</h1>
+            <ul>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#product">Product</a></li>
+                <li><a href="#testimonial">Testimonial</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Premium Homemade Groundnuts</h1>
+            <p>Naturally Roasted | Freshly Prepared | Pure Quality</p>
+            <button class="cta-btn">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product" id="product">
+        <div class="container">
+            <div class="product-image">
+                <img src="product-image.jpg" alt="Premium Homemade Groundnuts" />
+            </div>
+            <div class="product-info">
+                <h2>Artisan Crafted Groundnuts</h2>
+                <p>Discover the authentic taste of homemade groundnuts, carefully roasted and prepared with love. Our groundnuts are sourced from the finest African farms and processed to perfection.</p>
+                <p>Each batch is roasted fresh to ensure maximum flavor and nutritional value. No artificial additives, no preservatives—just pure, wholesome goodness.</p>
+                <div class="price">$12.99 per jar</div>
+                <button class="cta-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial" id="testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <h2>The Secret to Glassy Skin</h2>
+                <p>I've always been passionate about natural beauty and healthy living. That's why I'm committed to using products that nourish my body from within.</p>
+                <p>Our premium groundnuts are packed with essential nutrients, healthy fats, and antioxidants that promote skin health, boost energy levels, and support overall wellness.</p>
+                <p>The high vitamin E and selenium content helps maintain youthful, radiant skin while the protein keeps you satisfied and strong.</p>
+                <p class="model-quote">"This is the reason for my glassy skin! Pure, natural, and effective."</p>
+            </div>
+            <div class="testimonial-image">
+                <img src="model-image.jpg" alt="Beautiful African Model with Groundnuts" />
+                <p style="margin-top: 15px; font-weight: 600; color: #8B4513;">Featuring a stunning African model sharing her beauty secret</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2>Why Choose Our Homemade Groundnuts?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Radiant Skin</h3>
+                    <p>Rich in vitamin E and antioxidants that promote youthful, glowing skin. Helps reduce fine lines and improve skin elasticity naturally.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💪</div>
+                    <h3>Protein Powerhouse</h3>
+                    <p>High in plant-based protein, perfect for muscle building and recovery. An ideal snack for fitness enthusiasts and health-conscious individuals.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧠</div>
+                    <h3>Brain Health</h3>
+                    <p>Contains nutrients that support cognitive function and mental clarity. Magnesium and folate aid in brain development and memory enhancement.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">❤️</div>
+                    <h3>Heart Health</h3>
+                    <p>Monounsaturated fats support cardiovascular health. Helps maintain healthy cholesterol levels and reduces risk of heart disease.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Energy Boost</h3>
+                    <p>Natural source of sustained energy from healthy fats and proteins. No energy crashes—just steady, lasting vitality throughout the day.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>100% Natural</h3>
+                    <p>No artificial additives, preservatives, or GMOs. Homemade with love using traditional African recipes and methods.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Pure Homemade Groundnuts. All rights reserved.</p>
+            <p>Crafted with ❤️ for your health and beauty</p>
+            <p>Contact us: info@puregroundnuts.com | Phone: +234 XXX XXXX XXXX</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add to Cart functionality
+        document.querySelectorAll('.cta-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                if(this.textContent.includes('Add to Cart') || this.textContent.includes('Shop Now')) {
+                    alert('Thank you for your interest! Proceed to checkout or contact us for orders.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
